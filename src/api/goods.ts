@@ -9,11 +9,11 @@ export function getAll(): Promise<Good[]> {
       throw new Error('Network response was not ok');
     }
 
-    return response.json();
+    return response.json() as Promise<Good[]>;
   });
 }
 
-export const get5First = () => {
+export const get5First = (): Promise<Good[]> => {
   return getAll().then(goods =>
     [...goods]
       .sort((good1, good2) => good1.name.localeCompare(good2.name))

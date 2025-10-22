@@ -12,10 +12,6 @@ export const App: React.FC = () => {
   const [goods, setGoods] = useState<Good[]>([]);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  // useEffect(() => {
-  //   getAll().then(receivedGoods => setGoods(receivedGoods));
-  // }, []);
-
   const handleLoadAll = () => {
     setErrorMessage(null);
     getAll()
